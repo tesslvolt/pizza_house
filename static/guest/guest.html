@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Pizza House 🍕</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff7f0;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(90deg, #ff7a18, #ff9f1c);
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .pizza-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .pizza-title {
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+
+    .variant {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      padding: 8px 0;
+      border-bottom: 1px dashed #ddd;
+    }
+
+    button {
+      background: #ff7a18;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #ff9f1c;
+    }
+
+    .order-form {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 40px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    footer {
+      text-align: center;
+      margin: 40px 0;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Pizza House 🍕</h1>
+  <p>Свежая пицца прямо из печи</p>
+</header>
+
+<div class="container">
+  <div id="pizza-list"></div>
+
+  <div class="order-form">
+    <h2>Оформить заказ</h2>
+
+    <input id="name" placeholder="Ваше имя">
+    <input id="phone" placeholder="Телефон">
+
+    <button onclick="submitOrder()">Отправить заказ</button>
+  </div>
+</div>
+
+<footer>
+  © Pizza House
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

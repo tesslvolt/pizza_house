@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Pizza House 🍕</title>
+    <style>
+        /* ====== Базовые стили ====== */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #fff4e6, #ffe0b2);
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* ====== Хедер ====== */
+        header {
+            background: linear-gradient(90deg, #ff6f00, #ff8c42);
+            padding: 1rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 {
+            color: #fff;
+            margin: 0;
+            font-size: 2rem;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .header-buttons button {
+            padding: 0.6rem 1.5rem;
+            font-weight: bold;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .btn-login {
+            background-color: #fff;
+            color: #ff6f00;
+        }
+
+        .btn-login:hover {
+            background-color: #ffe0b2;
+            transform: translateY(-2px);
+        }
+
+        .btn-register {
+            background: linear-gradient(45deg, #ffb74d, #ff6f00);
+            color: white;
+        }
+
+        .btn-register:hover {
+            background: linear-gradient(45deg, #ff8c42, #ff6f00);
+            transform: translateY(-2px);
+        }
+
+        .btn-cart {
+            background-color: #fff;
+            color: #ff6f00;
+            font-size: 1rem;
+        }
+
+        .btn-cart:hover {
+            background-color: #ffe0b2;
+            transform: scale(1.05);
+        }
+
+        /* ====== Баннер с акцией ====== */
+        .promo-banner {
+            margin: 2rem auto;
+            background: linear-gradient(90deg, #ff8c42, #ff6f00);
+            color: white;
+            padding: 2rem 3rem;
+            border-radius: 16px;
+            text-align: center;
+            max-width: 1000px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+            font-size: 1.4rem;
+            font-weight: bold;
+            animation: bannerFade 1.5s ease-out;
+        }
+
+        @keyframes bannerFade {
+            from { opacity: 0; transform: translateY(-20px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+
+        /* ====== Основной контент ====== */
+        main {
+            padding: 3rem 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .pizza-card {
+            background: #fff3e0;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            padding: 1rem;
+            width: 240px;
+            text-align: center;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pizza-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+        }
+
+        .pizza-card img {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .pizza-card img:hover {
+            transform: scale(1.05);
+        }
+
+        .pizza-card h3 {
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+            color: #ff6f00;
+        }
+
+        .pizza-card p {
+            font-size: 0.95rem;
+            color: #555;
+            margin: 0.5rem 0 1rem 0;
+        }
+
+        .pizza-card button {
+            margin-top: 0.5rem;
+            background: linear-gradient(45deg, #ff6f00, #ff8c42);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: transform 0.2s ease, background 0.3s ease;
+        }
+
+        .pizza-card button:hover {
+            background: linear-gradient(45deg, #ff8c42, #ff6f00);
+            transform: translateY(-3px) scale(1.05);
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pizza House 🍕</h1>
+        <div class="header-buttons">
+            <a href="/static/login/login.html"><button class="btn-login">Войти</button></a>
+            <a href="/static/register/register.html"><button class="btn-register">Регистрация</button></a>
+            <button class="btn-cart">Корзина 🛒</button>
+        </div>
+    </header>
+
+    <div class="promo-banner">
+        🎉 Сегодня акция: Каждая вторая пицца за полцены! Только сегодня! 🍕
+    </div>
+
+    <main id="pizza-container">
+        <!-- Пиццы будут подгружаться через JS -->
+    </main>
+
+    <script src="./main.js"></script>
+</body>
+</html>

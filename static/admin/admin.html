@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Pizza Panel</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #fffaf0;
+            color: #333;
+            padding: 2rem;
+        }
+
+        h1 {
+            color: #ff6f00;
+        }
+
+        .container {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .pizza-list, .add-pizza {
+            background: #fff3e0;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            flex: 1;
+        }
+
+        input, select {
+            padding: 0.5rem;
+            margin: 0.3rem 0;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #ff6f00;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            margin-top: 0.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button.delete {
+            background-color: #e53935;
+        }
+
+        .pizza-card {
+            border: 1px solid #ffb74d;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            border-radius: 5px;
+        }
+
+        .variants {
+            margin-left: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .variant {
+            font-size: 0.9rem;
+        }
+
+        .error {
+            color: red;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Admin Pizza Panel 🍕</h1>
+
+    <div class="container">
+        <div class="pizza-list">
+            <h2>Список пицц</h2>
+            <div id="pizza-container"></div>
+        </div>
+
+        <div class="add-pizza">
+            <h2>Добавить пиццу</h2>
+            <div class="error" id="error"></div>
+            <label>Изображение пиццы</label>
+            <input type="file" id="pizza-image" accept="image/*">
+            <input type="text" id="pizza-name" placeholder="Название пиццы">
+            <input type="text" id="pizza-desc" placeholder="Описание">
+            <button id="add-pizza-btn">Добавить пиццу</button>
+
+            <h3>Добавить вариант пиццы</h3>
+            <select id="pizza-select"></select>
+            <input type="text" id="variant-size" placeholder="Размер (например, S, M, L)">
+            <input type="number" id="variant-price" placeholder="Цена">
+            <button id="add-variant-btn">Добавить вариант</button>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
